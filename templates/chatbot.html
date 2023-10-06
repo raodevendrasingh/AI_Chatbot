@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+<div class="h-screen flex flex-col">
+	<div class="bg-blue-500 text-white p-4">Chat</div>
+	<div class="flex-grow bg-gray-200 overflow-y-auto p-4">
+		<div class="bg-green-200 rounded p-2 mb-4 max-w-md self-start">
+			<div class="font-semibold">AI Chatbot</div>
+			<div>Hi, I am your AI Chatbot, you can ask me anything.</div>
+		</div>
+		<!-- Add more messages here -->
+	</div>
+	<form class="bg-gray-300 p-4">
+		{% csrf_token %}
+		<div class="flex">
+			<input
+				type="text"
+				class="flex-grow rounded-l p-2"
+				placeholder="Type your message..."
+			/>
+			<button type="submit" class="bg-blue-500 text-white rounded-r p-2">
+				Send
+			</button>
+		</div>
+	</form>
+</div>
+{% endblock %}
